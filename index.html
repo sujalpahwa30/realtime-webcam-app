@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Interaction App</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    
+    <h1>📷 Camera Interaction App</h1>
+
+    <video id="videoFeed" autoplay playsinline></video>
+    <canvas id="canvas" class="hidden"></canvas>
+
+    <div class="io-areas">
+        <div>
+            <label for="baseURL">Base API:</label><br>
+            <input id="baseURL" type="url" value="http://localhost:8080">
+        </div>
+        <div>
+            <label for="instructionText">Instruction:</label><br>
+            <textarea id="instructionText"></textarea>
+        </div>
+        <div>
+            <label for="responseText">Latest Response:</label><br>
+            <textarea id="responseText" readonly placeholder="Server response will appear here..."></textarea>
+        </div>
+        <div>
+            <label>Response History:</label>
+            <ul id="responseHistory"></ul>
+        </div>
+    </div>
+
+    <div class="controls">
+        <label for="intervalSelect">Interval:</label>
+        <select id="intervalSelect">
+            <option value="100">100ms</option>
+            <option value="250">250ms</option>
+            <option value="500" selected>500ms</option>
+            <option value="1000">1s</option>
+            <option value="2000">2s</option>
+        </select>
+
+        <button id="startButton" class="start">Start</button>
+        <button id="captureOnce">Capture Once</button>
+        <div id="spinner" class="hidden">⏳ Processing...</div>
+
+    </div>
+</body>
+</html>
